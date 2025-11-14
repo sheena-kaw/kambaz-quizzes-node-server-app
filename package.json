@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "kambaz-node-server-app",
   "version": "1.0.0",
   "description": "Node.js HTTP Web server for the Kambaz application",
@@ -21,12 +22,16 @@
   },
   "license": "ISC",
   "author": "Amani Scarborough",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "uuid": "^13.0.0"
   }
 }
