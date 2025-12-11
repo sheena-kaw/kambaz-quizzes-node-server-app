@@ -31,6 +31,4 @@ const submissionSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-const submissionModel = mongoose.model("Submission", submissionSchema);
-
-export default { submissionModel };
+export default submissionSchema;

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import submissionModel from "./schema.js";
+import submissionModel from "./model.js";
 
 export default function SubmissionsDao() {
   // Create a new submission
@@ -20,12 +20,11 @@ export default function SubmissionsDao() {
     }
   }
 
-  // Get all submissions for a quiz by a specific student
   async function getStudentSubmissionsForQuiz(studentId, quizId) {
     try {
       const submissions = await submissionModel
         .find({ studentId, quizId })
-        .sort({ createdAt: -1 }); // Most recent first
+        .sort({ createdAt: -1 });
       return submissions;
     } catch (error) {
       console.error("Error fetching student submissions:", error);

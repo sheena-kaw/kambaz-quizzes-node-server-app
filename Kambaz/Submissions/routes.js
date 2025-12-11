@@ -6,6 +6,7 @@ export default function SubmissionsRoutes(app, db) {
   const submitQuiz = async (req, res) => {
     try {
       const { quizId } = req.params;
+
       const { studentId, courseId, answers, score, attemptNumber, results } =
         req.body;
 
@@ -29,8 +30,7 @@ export default function SubmissionsRoutes(app, db) {
       res.status(500).json({ error: "Failed to submit quiz" });
     }
   };
-  
-  // Get all submissions for a student on a specific quiz
+
   const getStudentSubmissions = async (req, res) => {
     try {
       const { quizId, studentId } = req.params;
